@@ -1,0 +1,45 @@
+// Maco Wins
+
+class UserException inherits DomainException {
+
+}
+
+** Como cada prenda va a tener un estado (tipo, precio, estado) crearemos una clase para instanciarlas.
+
+class Prenda {
+
+	const tipo
+	var property estado
+	var property precio
+
+	method precioPropio() = estado.precioFinal(precio)
+
+}
+/* de los tres estados (nueva, promoción y liquidación, promoción tiene un estado por lo que será una clase. los otros objetos */
+
+object nueva {
+
+	method precioFinal(precio) = precio
+
+}
+
+class Promocion {
+
+	var property descuento
+
+	method precioFinal(precio) = precio - descuento
+
+}
+
+object liquidacion {
+
+	method precioFinal(precio) = precio * 0.5
+
+}
+
+object macoWins{
+	const property ventas = []
+	
+	
+}
+
